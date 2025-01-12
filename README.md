@@ -36,3 +36,21 @@
     </ul>
   </div>
 </details>
+<details>
+  <summary>
+    <b>함수</b>  
+  </summary>
+  <div markdown="1">
+    <ul>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/exception_14.py">2-14. None을 반환하기보다는 예외를 일으키자</a>
+      </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/closure_15.py">2-15. 클로저가 변수 스코프와 상호 작용하는 방법을 알자</a>
+      </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/generator2_16.py">2-16. 리스트를 반환하는 대신 제너레이터를 고려하자</a>
+      </li>
+    </ul>
+  </div>
+</details>
