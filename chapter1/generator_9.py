@@ -4,20 +4,20 @@
 
 # 컴프리헨션: 문자열의 길이를 배열로 출력
 # [100, 57]
-value = [len(x) for x in open("/Users/eh_com/python-study/tmp/my_file.txt")]
+value = [len(x) for x in open("../tmp/my_file.txt")]
 print(value)
 
 # 제너레이터: 문자열의 길이를 하나씩 출력
 # 100
 # 57
-it = (len(x) for x in open("/Users/eh_com/python-study/tmp/my_file.txt"))
+it = (len(x) for x in open("../tmp/my_file.txt"))
 print(next(it))
 print(next(it))
 
 # 제너레이터: 문자열의 길이를 0.5 제곱
 # (100, 10.0)
 # (57, 7.54983443527075)
-it = (len(x) for x in open("/Users/eh_com/python-study/tmp/my_file.txt"))
+it = (len(x) for x in open("../tmp/my_file.txt"))
 roots = ((x, x**0.5) for x in it)
 print(next(roots))
 print(next(roots))
