@@ -51,6 +51,12 @@
       <li>
         <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/generator2_16.py">2-16. 리스트를 반환하는 대신 제너레이터를 고려하자</a>
       </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/iterator3_17.py">2-17. 인수를 순회할 때는 방어적으로 하자</a>
+      </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/clean_18.py">2-18. 가변 위치 인수로 깔금하게 보이게 하자</a>
+      </li>
     </ul>
   </div>
 </details>
