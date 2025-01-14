@@ -57,6 +57,15 @@
       <li>
         <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/clean_18.py">2-18. 가변 위치 인수로 깔금하게 보이게 하자</a>
       </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/argument_19.py">2-19. 키워드 인수로 선택적인 동작을 제공하자</a>
+      </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/argument2_20.py">2-20. 동적 기본 인수를 지정하려면 None과 docstring을 사용하자</a>
+      </li>
+      <li>
+        <a href="https://github.com/OikimiO/python-study/blob/main/chapter2/argument3_21.py">2-21. 키워드 전용 인수로 명료성을 강요하자</a>
+      </li>
     </ul>
   </div>
 </details>
