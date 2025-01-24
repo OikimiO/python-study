@@ -1,8 +1,7 @@
 """
-    # 간단한 공개 속성을 사용하여 새 클래스 인터페이스를 정의하고 세터와 게터 메서드는 사용하지 말자
-    # 객체의 속성에 접근할 때 특별한 동작을 정의하려면 @property를 사용하자
-    # @property 메서드에서 최소 놀람 규칙을 따르고 이상한 부작용은 피하자
-    # @property 메서드가 빠르게 동작하도록 만들자. 느리거나 복잡한 작업은 일반 메서드로 하자
+    # 기존 인스턴스 속성에 새 기능을 부여하려면 @property를 사용하자
+    # @property를 사용하여 점점 나은 데이터 모델로 발전시키자
+    # @property를 너무 많이 사용한다면 클래스와 이를 호출하는 모든 곳을 리팩토링하는 방안을 고려하자
 """
 from datetime import datetime, timedelta
 
@@ -63,3 +62,48 @@ class Bucket(object):
 
     def __repr__(self):
         return ('Bucket(max_quota=%d, quota_consumed=%d)') % (self.max_quota, self.quota_consumed)
+
+    @property
+    def quota(self):
+        return self.max_quota - self.quota_consumed
+
+    @quota.setter
+    def quota(self, amount):
+        delta = self.max_quota - amount
+        if amount == 0:
+            # 새 기간의 할당량을 리셋함
+            self.quota_consumed = 0
+            self.max_quota = 0
+        if delta < 0:
+            # 새 기간의 할당량을 채움
+            assert self.quota_consumed == 0
+            self.max_quota = amount
+        else:
+            # 기간 동안 할당량을 소비함
+            assert self.max_quota >= self.quota_consumed
+            self.quota_consumed += delta
+
+bucket = Bucket(60)
+# Initial Bucket(max_quota=0, quota_consumed=0)
+print('Initial', bucket)
+fill(bucket, 100)
+# filled Bucket(max_quota=100, quota_consumed=0)
+print('filled', bucket)
+
+if deduct(bucket, 99):
+    # Had 99 quota
+    print('Had 99 quota')
+else:
+    print('Not enough for 99 quota')
+
+# Now Bucket(max_quota=100, quota_consumed=99)
+print('Now', bucket)
+
+if deduct(bucket, 3):
+    print('Had 3 quota')
+else:
+    # Not enough for 3 quota
+    print('Not enough for 3 quota')
+
+# Still Bucket(max_quota=100, quota_consumed=99)
+print('Still', bucket)
